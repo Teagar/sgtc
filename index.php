@@ -22,7 +22,7 @@ if ($sql->rowCount() > 0) {
   <div id="sgtc">
     <h1>Coisas para fazer</h1>
 
-    <form class="sgtc-form">
+    <form action="src/api/create.php" method="POST" class="sgtc-form">
       <input type="text" name="title" placeholder="Escreva a sua tarefa aqui" required>
       <button type="submit" class="form-button">
         <i class="fa-solid fa-plus"></i>
