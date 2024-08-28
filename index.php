@@ -7,9 +7,6 @@ $sql = $pdo->query("SELECT * FROM task");
 
 if ($sql->rowCount() > 0) {
   $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
-  echo "<pre>";
-  print_r($tasks);
-  echo "</pre>";
 }
 ?><!DOCTYPE html>
 <html lang="pt-br">
@@ -33,39 +30,42 @@ if ($sql->rowCount() > 0) {
     </form>
 
     <div id="tasks">
-        <div class="task">
-          <input 
-            type="checkbox" 
-            name="progress" 
-            class="progress"
-          >
-            
-          <p class="task-title">
-            Teste de tarefa
-          </p>
+        <?php foreach($tasks as $task): ?>
+          <div class="task">
+            <input 
+              type="checkbox" 
+              name="progress" 
+              class="progress"
+              <?= $task['completed'] ? 'checked' : '' ?>
+            >
+              
+            <p class="task-title">
+              <?= $task['title']?>
+            </p>
 
-          <div class="task-actions">
-            <a class="action-button edit-button">
-              <i class="fa-regular fa-pen-to-square"></i>
-          </a>
+            <div class="task-actions">
+              <a class="action-button edit-button">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </a>
 
-          <a class="action-button delete-button">
-            <i class="fa-regular fa-trash-can"></i>
-          </a>
+            <a class="action-button delete-button">
+              <i class="fa-regular fa-trash-can"></i>
+            </a>
+          </div>
+
+          <form class="sgtc-form edit-task hidden">
+            <input type="text" class="hidden" name="id" value="">
+            <input 
+              type="text"
+              name="title" 
+              placeholder="Edite sua tarefa aqui" 
+            >
+            <button type="submit" class="form-button confirm-button">
+              <i class="fa-solid fa-check"></i>
+            </button>
+          </form>
         </div>
-
-        <form class="sgtc-form edit-task hidden">
-          <input type="text" class="hidden" name="id" value="">
-          <input 
-            type="text"
-            name="title" 
-            placeholder="Edite sua tarefa aqui" 
-          >
-          <button type="submit" class="form-button confirm-button">
-            <i class="fa-solid fa-check"></i>
-          </button>
-        </form>
-      </div>
+      <?php endforeach ?>
     </div>
   </div>
   <script src="src/javascript/script.js"></script>
