@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<?php
+require_once("database/conn.php");
+
+$tasks = [];
+
+$sql = $pdo->query("SELECT * FROM task");
+
+if ($sql->rowCount() > 0) {
+  $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
+  echo "<pre>";
+  print_r($tasks);
+  echo "</pre>";
+}
+?><!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
