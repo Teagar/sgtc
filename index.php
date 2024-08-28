@@ -45,13 +45,16 @@ if ($sql->rowCount() > 0) {
             </p>
 
             <div class="task-actions">
+              <a class="action-button favorite-button">
+                <i class="fa-regular fa-heart"></i>
+              </a>
               <a class="action-button edit-button">
                 <i class="fa-regular fa-pen-to-square"></i>
-            </a>
+              </a>
 
-            <a href="src/api/delete.php?id=<?= $task["id"]?>" class="action-button delete-button">
-              <i class="fa-regular fa-trash-can"></i>
-            </a>
+              <a href="src/api/delete.php?id=<?= $task["id"]?>" class="action-button delete-button">
+                <i class="fa-regular fa-trash-can"></i>
+              </a>
           </div>
 
           <form action="src/api/update.php" method="POST" class="sgtc-form edit-task hidden">

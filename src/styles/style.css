@@ -110,6 +110,10 @@ body {
   font-size: 16px;
 }
 
+.action-button.favorite-button {
+  color: #aa0e0e;
+}
+
 .action-button.edit-button {
   color: #6c9bbc;
 }
