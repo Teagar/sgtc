@@ -3,7 +3,7 @@ require_once("database/conn.php");
 
 $tasks = [];
 
-$sql = $pdo->query("SELECT * FROM task");
+$sql = $pdo->query("SELECT * FROM task ORDER BY id ASC");
 
 if ($sql->rowCount() > 0) {
   $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
