@@ -53,12 +53,18 @@ if ($sql->rowCount() > 0) {
             </a>
           </div>
 
-          <form class="sgtc-form edit-task hidden">
-            <input type="text" class="hidden" name="id" value="">
+          <form action="src/api/update.php" method="POST" class="sgtc-form edit-task hidden">
+            <input 
+            type="text" 
+            class="hidden" 
+            name="id" 
+            value="<?= $task["id"]?>"
+            >
             <input 
               type="text"
               name="title" 
-              placeholder="Edite sua tarefa aqui" 
+              placeholder="Edite sua tarefa aqui"
+              value="<?= $task["title"]?>"
             >
             <button type="submit" class="form-button confirm-button">
               <i class="fa-solid fa-check"></i>
