@@ -13,7 +13,7 @@
     <h1>Coisas para fazer</h1>
 
     <form class="sgtc-form">
-      <input type="text" name="description" placeholder="Escreva a sua tarefa aqui" required>
+      <input type="text" name="title" placeholder="Escreva a sua tarefa aqui" required>
       <button type="submit" class="form-button">
         <i class="fa-solid fa-plus"></i>
       </button>
@@ -27,7 +27,7 @@
             class="progress"
           >
             
-          <p class="task-description">
+          <p class="task-title">
             Teste de tarefa
           </p>
 
@@ -45,7 +45,7 @@
           <input type="text" class="hidden" name="id" value="">
           <input 
             type="text"
-            name="description" 
+            name="title" 
             placeholder="Edite sua tarefa aqui" 
           >
           <button type="submit" class="form-button confirm-button">

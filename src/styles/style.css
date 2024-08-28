@@ -89,12 +89,12 @@ body {
   margin-right: 10px;
 }
 
-.task .progress.done + .task-description {
+.task .progress.done + .task-title {
   text-decoration: line-through;
   color: #e5f9ffa7;
 }
 
-.task .task-description {
+.task .task-title {
   font-size: 16px;
   color: #fff;
   padding: 4px 0px;
